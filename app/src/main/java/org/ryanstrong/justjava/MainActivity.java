@@ -24,21 +24,21 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-//        String thanks= " Thank you";
         int price = calculatePrice();
-        String priceMessage = "Total = $" + price ;
-        priceMessage = priceMessage +"\nThank you!";
-        displayMessage(priceMessage);
+        displayMessage(createOrderSummary(price));
         }
+    private String createOrderSummary(int price){
+
+        return "Name: Ryan \nQuantity: " + quantity + "\nTotal: $" + price + "\nThank you!";
+    }
     /**
      * Calculates the total price of the order.
      *
      * quantity is the number of cups of coffee ordered
      */
     private int calculatePrice() {
-        int price = quantity * 5;
-        return price;
-    }
+        return quantity * 5;
+            }
     public void increment(View view ){
         quantity ++;
         displayQuantity (quantity);
@@ -54,15 +54,11 @@ public class MainActivity extends AppCompatActivity {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + numb);
     }
-    private void displayPrice(int number){
-        TextView priceTextView=(TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
-    /**
+        /**
      * This method displays the given text on the screen.
      */
     private void displayMessage(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(message);
+        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_sum);
+        orderSummaryTextView.setText(message);
     }
 }
