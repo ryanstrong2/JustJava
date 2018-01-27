@@ -4,6 +4,7 @@ package org.ryanstrong.justjava;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -24,12 +25,18 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+        CheckBox checkBox =(CheckBox) findViewById(R.id.whip);
+        boolean hasWhippedCream = checkBox.isChecked();
+        CheckBox chocCheckBox =(CheckBox) findViewById(R.id.choc);
+        boolean hasChocolate = chocCheckBox.isChecked();
         int price = calculatePrice();
-        displayMessage(createOrderSummary(price));
+        displayMessage(createOrderSummary(price, hasWhippedCream, hasChocolate));
         }
-    private String createOrderSummary(int price){
+    private String createOrderSummary(int price, boolean hasWhippedCream, boolean hasChocolate){
 
-        return "Name: Ryan \nQuantity: " + quantity + "\nTotal: $" + price + "\nThank you!";
+        return "Name: Ryan \nAdd Whipped cream? " + hasWhippedCream + "\nAdd chocolate? "
+                + hasChocolate +
+                "\nQuantity: " + quantity + "\nTotal: $" + price + "\nThank you!";
     }
     /**
      * Calculates the total price of the order.
