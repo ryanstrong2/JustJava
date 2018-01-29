@@ -5,9 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
-
-import java.text.NumberFormat;
 
 /**
  * This app displays an order form to order coffee.
@@ -30,11 +29,14 @@ public class MainActivity extends AppCompatActivity {
         CheckBox chocCheckBox =(CheckBox) findViewById(R.id.choc);
         boolean hasChocolate = chocCheckBox.isChecked();
         int price = calculatePrice();
-        displayMessage(createOrderSummary(price, hasWhippedCream, hasChocolate));
-        }
-    private String createOrderSummary(int price, boolean hasWhippedCream, boolean hasChocolate){
+        String name = setNameView();
+        displayMessage(createOrderSummary(price, hasWhippedCream, hasChocolate, name));
 
-        return "Name: Ryan \nAdd Whipped cream? " + hasWhippedCream + "\nAdd chocolate? "
+
+        }
+    private String createOrderSummary(int price, boolean hasWhippedCream, boolean hasChocolate, String name){
+
+        return "Name: " + name + "\nAdd Whipped cream? " + hasWhippedCream + "\nAdd chocolate? "
                 + hasChocolate +
                 "\nQuantity: " + quantity + "\nTotal: $" + price + "\nThank you!";
     }
@@ -68,4 +70,11 @@ public class MainActivity extends AppCompatActivity {
         TextView orderSummaryTextView = (TextView) findViewById(R.id.order_sum);
         orderSummaryTextView.setText(message);
     }
+    private String setNameView(){
+        EditText editText = (EditText) findViewById(R.id.name);
+        String name = editText.getText().toString();
+//        return editText;
+        return name;
+    }
+
 }
