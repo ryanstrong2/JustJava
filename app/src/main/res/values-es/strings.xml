@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!--App Title-->
+    <string name="app_name">Solo Java</string>
+    <!--Hint text display in the empty field for the user's name-->
+    <string name="order_name">Nombre: <xliff:g id="name" example="Ben">%s</xliff:g></string>
+    <string name="whipped">Agregue la crema batida? <xliff:g id="addWhipped">%s</xliff:g></string>
+    <string name="order_summary_quantity">Cantidad: <xliff:g id="quantity" example="2">%d</xliff:g></string>
+
+</resources>

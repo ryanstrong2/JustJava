@@ -1,3 +1,23 @@
-<resources>
-    <string name="app_name">Just Java</string>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name" translatable="false">Just Java</string>
+    <!--Header test for toppings-->
+    <string name="toppings">Toppings</string>
+    <!--Thank you message for the order summary-->
+    <string name="thanks">Thank you.</string>
+    <!--Name will be shown in the format "Name: Ryan" (user's name)[Char limit=None]-->
+    <string name="order_name">Name: <xliff:g id="name" example="Ryan"></xliff:g> </string>
+    <!--Quantity changes as incremented or decremented-->
+    <!--<string name="quantity">1 </string>-->
+    <!--Add Whipped Cream-->
+    <string name="whipped">Add Whipped cream? <xliff:g id="addWhipped" ></xliff:g> </string>
+    <!--Chocolate-->
+    <string name="chocolate">Add chocolate? </string>
+    <!--Quantity text-->
+    <string name="quantity">Quantity: <xliff:g id="quantity"></xliff:g></string>
+    <!--Quantity in summary-->
+    <string name="order_summary_quantity">1 <xliff:g id="orderQuantity" example="2"></xliff:g></string>
+    <!--Total price for order summary-->
+    <string name="order_summary_price">Total: <xliff:g id="price" example="$10">%s</xliff:g></string>
+    <!--Order button-->
+    <!--<string name="submit">Order<xliff:g id="order" >%s</xliff:g></string>-->
 </resources>
